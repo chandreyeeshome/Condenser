@@ -178,3 +178,8 @@ button {
 #player::-moz-time-bar {
     background-color: white;
 }
+
+.clicked {
+    /* background-color: #f0f0f0 Example style */
+    border: 10px solid #ffffff;   /* Example style*/
+}
