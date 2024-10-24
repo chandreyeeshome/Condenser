@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Condense</title>
-    <link rel="icon" href="favicon.svg" type="image/png">
+    <title>Condenser</title>
+    <link rel="icon" href="elements/favicon.svg" type="image/png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,9 +12,11 @@
 </head>
 <body>
     <div class="header">
-        <img src="logo.svg" alt="" class="logoImg">
-        <button id="login">Login</button>
-        <button id="signup">Sign Up</button>
+        <img src="elements/logo.svg" alt="" class="logoImg">
+        <!-- <button id="login">Login</button>
+        <button id="signup">Sign Up</button> -->
+        <button id="Balance">Balance</button>
+        <button id="Wallet">Connect Wallet</button>
     </div>
     <div class="container">
         <div class="containerRec">
@@ -24,15 +26,41 @@
             <!-- <span>Saved Recording</span> -->
             <audio id="player" controls></audio>
             <div class="btns">
-                <button id="start"  onclick="startRecording()""><img src="211859_mic_icon 1.svg" alt="" class="micImg"></button>
-                <button id="stop"><img src="pause.svg" alt="" class="pauseImg"></button>
+                <button id="start"  onclick="startRecording()""><img src="elements/211859_mic_icon 1.svg" alt="" class="micImg"></button>
+                <button id="stop"><img src="elements/pause.svg" alt="" class="pauseImg"></button>
             </div>
+            <button id="convert" onclick="showText()">Convert</button>
         </div>
-        <div class="containerText">
-            Recognized Text will appear here
+        <div class="containerText" id="containerText">
+            <!-- Recognized Text will appear here -->
+             <div class="textCont">
+                <p>Hello Everyone! <br>This is an Audio-to-Text conversion platform. I hope Condenser will be of great help to you. <br>Thank you.</p>
+             </div>
         </div>
     </div>
     <script src="script2.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
+    <script>
+        const connectWalletButton = document.getElementById("Wallet");
+
+        async function connectWallet() {
+            if (typeof window.ethereum !== 'undefined') {
+                try {
+                    const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                    // alert('Connected: ' + accounts[0]);
+                    const account = accounts[0];
+                    connectWalletButton.textContent = account.slice(0, 6) + '...' + account.slice(-4); // Shortened wallet address
+                } catch (error) {
+                    console.error("User rejected the connection");
+                }
+            } else {
+                alert('Please install MetaMask!');
+            }
+        }
+
+        connectWalletButton.addEventListener('click', connectWallet);
+    </script>
 </body>
 </html>
 

@@ -10,7 +10,7 @@
 }
 
 body{
-    background-image: url(download.png);
+    background-image: url(elements/download.png);
     /* background-color: rgba(0, 0, 0, 0.7); */
     height: 100vh;
     background-size:cover;
@@ -30,28 +30,29 @@ body{
     height: 40px;
     width: 40px;
 }
-#login{
+#Wallet{
     /* padding: 20px; */
-    width: 100px;
-    height: 30px;
+    width: 180px;
+    height: 35px;
     color: white;
     background-color: transparent;
-    border: solid white 1px;
+    border: solid white 2px;
     border-radius: 20px;
-    margin-left: 1220px;
+    margin-left: 20px;
     margin-top: 5px;
     font-size:medium;
     font-family: "Poppins", sans-serif;
+    /* flex: end; */
     /* cursor: pointer; */
 }
-#signup{
-    margin-left: 20px;
+#Balance{
+    margin-left: 1200px;
     margin-top: 5px;
     width: 120px;
-    height: 30px;
+    height: 35px;
     color: white;
     background-color: transparent;
-    border: solid white 1px;
+    border: solid white 2px;
     border-radius: 20px;
     font-size: medium;
     font-family: "Poppins", sans-serif;
@@ -66,7 +67,7 @@ body{
 .containerRec {
     height: 60vh;
     width: 80vh;
-    padding-top: 60px;
+    /* padding-top: 20px; */
 	display: flex;
 	flex-direction: column;
     align-items: center;
@@ -83,10 +84,22 @@ body{
 		margin: 8px;
 	} */
 }
+#convert{
+    width: 120px;
+    height: 35px;
+    /* padding-top: 5px; */
+    border-radius: 20px;
+    border:solid  #7f2b86 2px;
+    background-color: #0e0e0ea2;
+    font-size: medium;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    top: 20px;
+}
 .containerText{
     height: 60vh;
     width: 80vh;
-    padding-top: 60px;
+    /* padding-top: 30px; */
 	display: flex;
 	flex-direction: column;
     align-items: center;
@@ -98,7 +111,11 @@ body{
    -webkit-backdrop-filter: blur(5px);
     margin: 5px;
 }
-
+.textCont{
+    padding: 40px;
+    font-size: medium;
+    font-family: "Poppins", sans-serif;
+}
 .container{
     display: flex;
 }
@@ -118,6 +135,7 @@ button {
     /* margin-top: 50px; */
     /* margin-right: 50px; */
     margin: 10px;
+    /* margin-left: -5px; */
 }
 #stop{
     padding-top: 5px;

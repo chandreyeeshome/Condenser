@@ -46,3 +46,8 @@ async function startRecording() {
 
 // Attach the startRecording function to the start button
 document.getElementById('start').onclick = startRecording;
+
+const showText = () => {
+	var text = document.getElementById("containerText")
+	// console.log(text)
+}

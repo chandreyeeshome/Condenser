@@ -141,3 +141,4 @@ class VoiceRecorder {
 }
 
 window.voiceRecorder = new VoiceRecorder()
+
